@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Get named var (usage: get "VAR_NAME")
+get() {
+  echo "${!1}"
+}
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
+}
+
+# Calculator
+calc() {
+  echo "$*" | bc -l;
+}
+
+# Open man page as PDF
+manpdf() {
+  man -t "$1" | open -f -a /Applications/Preview.app/
+}
