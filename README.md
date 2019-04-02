@@ -1,2 +1,2 @@
 # dotfiles
-Bert's dotfiles
+Bert's [dotfiles](https://dotfiles.github.io/).
