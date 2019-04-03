@@ -10,7 +10,7 @@ fi
 
 # Source the dotfiles (order matters)
 # Order:.{function,function_*,path,env,alias,grep,prompt,nvm,completion,custom}
-for DOTFILE in "$DOTFILES"/system/.{functions,env,alias,prompt}; do
+for DOTFILE in "$DOTFILES"/system/.{functions,env,alias,prompt,prompt_git}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 

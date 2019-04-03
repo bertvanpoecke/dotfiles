@@ -1,1 +1,86 @@
-PS1="\u@\h:\w$ "
+#!/usr/bin/env bash
+
+## Old prompt value: PS1="\u@\h:\w$ "
+
+## (1) Git prompt setup:
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_DESCRIBE_STYLE=branch
+source $DOTFILES/system/.prompt_git
+
+
+## (2) Bash prompt setup:
+
+_bash_prompt_config() {
+
+    local USER_SYMBOL="\u"
+    local HOST_SYMBOL="\h"
+    local ESC_OPEN="\["
+    local ESC_CLOSE="\]"
+
+    # To see the full range of colors your terminal supports, you can use a simple loop with tput (change setab to setaf for text foregrounds):
+    #     for C in {0..255}; do
+    #         tput setab $C
+    #         echo -n "$C "
+    #     done
+    #     tput sgr0
+    #     echo
+    if $(is-supported "tput setaf"); then
+        _setaf () { tput setaf "$1" ; }
+        local RESET="${ESC_OPEN}$( { tput sgr0 || tput me ; } 2>/dev/null )${ESC_CLOSE}"
+        local BOLD="$( { tput bold || tput md ; } 2>/dev/null )"
+    else
+        # Fallback
+        _setaf () { echo "\033[0;$(($1+30))m" ; }
+        local RESET="\033[m"
+        local BOLD=""
+        ESC_OPEN=""
+        ESC_CLOSE=""
+    fi
+
+    # Normal colors
+    local BLACK="${ESC_OPEN}$(_setaf 0)${ESC_CLOSE}"
+    local RED="${ESC_OPEN}$(_setaf 1)${ESC_CLOSE}"
+    local GREEN="${ESC_OPEN}$(_setaf 2)${ESC_CLOSE}"
+    local YELLOW="${ESC_OPEN}$(_setaf 3)${ESC_CLOSE}"
+    local BLUE="${ESC_OPEN}$(_setaf 4)${ESC_CLOSE}"
+    local VIOLET="${ESC_OPEN}$(_setaf 5)${ESC_CLOSE}"
+    local CYAN="${ESC_OPEN}$(_setaf 6)${ESC_CLOSE}"
+    local WHITE="${ESC_OPEN}$(_setaf 7)${ESC_CLOSE}"
+
+    # Expose the variables we need in prompt command
+    P_USER=${GREEN}${USER_SYMBOL}
+    P_USER_MAC=${BLUE}${USER_SYMBOL}
+    P_HOST=${CYAN}${HOST_SYMBOL}
+    P_WHITE=${WHITE}
+    # P_GREEN=${BRIGHT_GREEN}
+    P_YELLOW=${YELLOW}
+    P_RED=${RED}
+    P_RESET=${RESET}
+}
+
+bash_prompt_command() {
+    # local DIR=${PWD##*/}
+    # local P_PWD=${PWD/#$HOME/\~}
+
+    if is-macos; then
+        # On OS X, show username in blue.
+        local U=${P_USER_MAC}
+    else
+        # On Linux and others, show username in green.
+        local U=${P_USER}
+    fi
+
+    PS1=""
+    if [ $(id -u) -eq 0 ]; then # If id command returns zero, you have root access.
+        PS1+="${P_RED}!! "
+    fi
+    PS1+="${U}${P_WHITE}@${P_HOST} ${P_YELLOW}\w$(__git_ps1)${P_WHITE} $ ${P_RESET}"
+}
+
+_bash_prompt_config
+unset _bash_prompt_config
+
+PROMPT_COMMAND=bash_prompt_command
