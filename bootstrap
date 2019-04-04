@@ -9,13 +9,13 @@ if ! which git > /dev/null; then
 fi
 
 echo "Checking if dotfiles are installed..."
-if [ -z "$dotfiles" ]; then
+if [ -z "$DOTFILES" ]; then
     echo "Installing dotfiles..."
     mkdir -p ~/bin
     cd ~/bin
     git clone --depth 1 https://github.com/bertvanpoecke/dotfiles.git
     cd dotfiles
-    yes | ./install
+    # yes | ./install
 else
     echo "All done."
 fi

@@ -14,7 +14,12 @@ for DOTFILE in "$DOTFILES"/system/.{functions,env,alias,prompt,prompt_git}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
+if is-macos; then
+    for DOTFILE in "$DOTFILES"/system/.{alias_macos}; do
+        [  -f "$DOTFILE" ] && source "$DOTFILE"
+    done
+fi
+
 # Clean up
 unset DOTFILE
-unset DOTFILES
-
+#unset DOTFILES
