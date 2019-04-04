@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
 # Get named var (usage: get "VAR_NAME")
-function get() {
+function get()
+{
     echo "${!1}"
 }
 
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
-function o() {
+function o()
+{
     if [ $# -eq 0 ]; then
         open .;
     else
@@ -17,7 +19,8 @@ function o() {
 
 # `c` with no arguments opens the current directory in Visual Studio Code, otherwise opens
 # the given location
-function c() {
+function c()
+{
     if [ $# -eq 0 ]; then
         code .;
     else
@@ -26,16 +29,37 @@ function c() {
 }
 
 # Create a new directory and enter it
-function mk() {
+function mk()
+{
     mkdir -p "$@" && cd "$@"
 }
 
 # Calculator
-function calc() {
+function calc()
+{
     echo "$*" | bc -l;
 }
 
 # Open man page as PDF
-function manpdf() {
+function manpdf()
+{
     man -t "$1" | open -f -a /Applications/Preview.app/
+}
+
+# Show all custom defined aliasses.
+function showalias()
+{
+    echo "## CUSTOM ALIASES:"
+    cat ${DOTFILES}/system/.alias | grep alias*
+    if is-macos; then
+        echo "## CUSTOM MACOS ALIASES:"
+        cat ${DOTFILES}/system/.alias_macos | grep '^##\|^alias'
+    fi
+}
+
+# Show all custom defined functions.
+function showfunc()
+{
+    echo "## CUSTOM FUNCTIONS:"
+    cat ${DOTFILES}/system/.functions | grep '^# \|^function'
 }
