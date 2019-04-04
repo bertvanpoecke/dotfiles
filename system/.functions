@@ -19,12 +19,6 @@ function calc()
     echo "$*" | bc -l;
 }
 
-# Open man page as PDF
-function manpdf()
-{
-    man -t "$1" | open -f -a /Applications/Preview.app/
-}
-
 ## OPENING FILES AND FOLDERS
 
 # `o` with no arguments opens the current directory, otherwise opens the given
@@ -38,28 +32,13 @@ function o()
     fi;
 }
 
-# `c` with no arguments opens the current directory in Visual Studio Code, otherwise opens
-# the given location
-function c()
-{
-    if [ $# -eq 0 ]; then
-        code .;
-    else
-        code "$@";
-    fi;
-}
-
 ## HELP FOR ALIASES AND FUNCTIONS
 
 # Show all custom defined aliasses.
 function showalias()
 {
     echo "\n## CUSTOM ALIASES:\n"
-    cat ${DOTFILES}/system/.alias | grep alias*
-    if is-macos; then
-        echo "\n## CUSTOM MACOS ALIASES:\n"
-        cat ${DOTFILES}/system/.alias_macos | grep '^##\|^alias'
-    fi
+    cat ${DOTFILES}/system/.alias | grep '^##\|^alias'
 }
 
 # Show all custom defined functions.

@@ -7,9 +7,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 ## Shortcuts
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias dl="cd $DOWNLOADS_FOLDER"
+alias dt="cd $DESKTOP_FOLDER"
+alias p="cd $PROJECTS_FOLDER"
 
 ## GIT
 alias g="git"
@@ -36,17 +36,3 @@ unset colorflag
 ## PATH
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
-
-## UPDATES
-# Get macOS Software Updates
-alias update="sudo softwareupdate -i -a;"
-
-## OPEN
-# Brave Browser
-alias obrave="open /Applications/Brave\ Browser.app/"
-
-## DELETE ACTIONS
-# Recursively delete `.DS_Store` files
-alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
-# Empty Trash
-alias emptytrash="sudo rm -rfv ~/.Trash;"

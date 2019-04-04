@@ -8,14 +8,18 @@ else
 	DOTFILES=`dirname $(readlink ~/.bashrc)`
 fi
 
+# Make personal utilities available
+PATH=$DOTFILES/bin:$PATH
+export PATH
+
 # Source the dotfiles (order matters)
 # Order:.{function,function_*,path,env,alias,grep,prompt,nvm,completion,custom}
-for DOTFILE in "$DOTFILES"/system/.{functions,env,alias,prompt,prompt_git}; do
+for DOTFILE in "$DOTFILES"/system/.{functions,path,env,alias,prompt,prompt_git}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
 if is-macos; then
-    for DOTFILE in "$DOTFILES"/system/.{alias_macos}; do
+    for DOTFILE in "$DOTFILES"/system/.{functions,path,env,alias}_macos; do
         [  -f "$DOTFILE" ] && source "$DOTFILE"
     done
 fi
