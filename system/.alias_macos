@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+## OPEN
+# Brave Browser
+alias obrave="open $BRAVE_APP"
+
+## DELETE ACTIONS
+# Recursively delete `.DS_Store` files
+alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
+# Empty Trash
+alias emptytrash="sudo rm -rfv ~/.Trash;"
+
+## UPDATES
+# Get macOS Software Updates
+alias update="sudo softwareupdate -i -a;"
+
 ## MACOS SETTINGS
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
