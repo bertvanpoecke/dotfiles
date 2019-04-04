@@ -15,5 +15,6 @@ for DOTFILE in "$DOTFILES"/system/.{functions,env,alias,prompt,prompt_git}; do
 done
 
 # Clean up
-unset DOTFILES DOTFILE
+unset DOTFILE
+unset DOTFILES
 
