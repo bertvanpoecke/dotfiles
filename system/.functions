@@ -37,21 +37,21 @@ function o()
 # Show all custom defined aliasses.
 function showalias()
 {
-    echo "\n## CUSTOM ALIASES:\n"
+    printf "\n## CUSTOM ALIASES:\n"
     cat ${DOTFILES}/system/.alias | grep '^##\|^alias'
 }
 
 # Show all custom defined functions.
 function showfunc()
 {
-    echo "\n## CUSTOM FUNCTIONS:\n"
+    printf "\n## CUSTOM FUNCTIONS:\n"
     cat ${DOTFILES}/system/.functions | grep '^##\|^# \|^function'
 }
 
 # Show all custom defined aliases and functions.
 function showall()
 {
-    echo "\n## ALL CUSTOM DEFINED ALIASSES AND FUNCTIONS:\n"
+    printf "\n## ALL CUSTOM DEFINED ALIASSES AND FUNCTIONS:\n"
     showalias
     showfunc
 }

@@ -15,7 +15,7 @@ if [ -z "$DOTFILES" ]; then
     cd ~/bin
     git clone --depth 1 https://github.com/bertvanpoecke/dotfiles.git
     cd dotfiles
-    # yes | ./install
+    yes | ./install
 else
     echo "All done."
 fi
