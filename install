@@ -7,9 +7,12 @@ echo "Linking profile files and directories..."
 dotfiles="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Files e.g.: runcom/bash_profile runcom/bashrc vim vim/gvimrc vim/vimrc ...
 for file in runcom/bash_profile runcom/bashrc; do
-  homefile=~/.`echo $file | sed -Ee 's/[a-z]+\///'` #This regular expression removes the folder before the filename. e.g.: vim/vimrc --> vimrc
-#   rm -rf "$homefile" 2>/dev/null
-#   ln -s "$dotfiles/$file" "$homefile"
+    homefile=~/.`echo $file | sed -Ee 's/[a-z]+\///'` #This regular expression removes the folder before the filename. e.g.: vim/vimrc --> vimrc
+    if [ -e $homefile ]; then
+        cp $homefile ${homefile}_old
+    fi
+    rm -rf "$homefile" 2>/dev/null
+    ln -s "$dotfiles/$file" "$homefile"
 done
 
 # echo "Setting up git..."

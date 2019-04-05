@@ -24,17 +24,17 @@ function manpdf()
 # Show all custom defined aliasses.
 function showalias()
 {
-    echo "\n## CUSTOM ALIASES:\n"
+    printf "\n## CUSTOM ALIASES:\n"
     cat ${DOTFILES}/system/.alias | grep '^##\|^alias'
-    echo "\n## CUSTOM MACOS ALIASES:\n"
+    printf "\n## CUSTOM MACOS ALIASES:\n"
     cat ${DOTFILES}/system/.alias_macos | grep '^##\|^alias'
 }
 
 # Show all custom defined functions.
 function showfunc()
 {
-    echo "\n## CUSTOM FUNCTIONS:\n"
+    printf "\n## CUSTOM FUNCTIONS:\n"
     cat ${DOTFILES}/system/.functions | grep '^##\|^# \|^function'
-    echo "\n## CUSTOM MACOS FUNCTIONS:\n"
+    printf "\n## CUSTOM MACOS FUNCTIONS:\n"
     cat ${DOTFILES}/system/.functions_macos | grep '^##\|^# \|^function'
 }

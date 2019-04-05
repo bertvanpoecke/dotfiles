@@ -3,9 +3,9 @@
 
 # Find dotfiles base path, with the -f option for full path if necessary
 if readlink -f ~/.bashrc > /dev/null 2>&1; then
-	DOTFILES=`dirname $(readlink -f ~/.bashrc)`
+	DOTFILES=$(dirname "$(dirname $(readlink -f ~/.bashrc))")
 else
-	DOTFILES=`dirname $(readlink ~/.bashrc)`
+	DOTFILES=$(dirname "$(dirname $(readlink ~/.bashrc))")
 fi
 
 # Make personal utilities available
@@ -14,7 +14,7 @@ export PATH
 
 # Source the dotfiles (order matters)
 # Order:.{function,function_*,path,env,alias,grep,prompt,nvm,completion,custom}
-for DOTFILE in "$DOTFILES"/system/.{functions,path,env,alias,prompt,prompt_git}; do
+for DOTFILE in "$DOTFILES"/system/.{functions,path,env,alias,local,prompt,prompt_git}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
