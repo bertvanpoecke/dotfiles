@@ -20,9 +20,9 @@ filepath="${folder}${filename}"
 echo $filepath
 
 if [[ -e $filepath ]]; then
-    cp $filepath ${filepath}_old
+    cp "$filepath" "${filepath}_old"
 fi
 
-cp $(pwd)/$filename $filepath
+cp "$(pwd)/$filename" "$filepath"
 
 echo "Done."
