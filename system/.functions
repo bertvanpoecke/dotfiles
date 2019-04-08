@@ -19,6 +19,12 @@ function calc()
     echo "$*" | bc -l;
 }
 
+# Source the .bashrc file again
+function relaunch()
+{
+    source ~/.bashrc
+}
+
 ## OPENING FILES AND FOLDERS
 
 # `o` with no arguments opens the current directory, otherwise opens the given
