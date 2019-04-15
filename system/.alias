@@ -7,6 +7,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 ## Shortcuts
+alias d="cd $DOCUMENTS_FOLDER"
 alias dl="cd $DOWNLOADS_FOLDER"
 alias dt="cd $DESKTOP_FOLDER"
 alias p="cd $PROJECTS_FOLDER"
