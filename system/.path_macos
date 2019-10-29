@@ -10,3 +10,6 @@ export PATH
 # Visual Studio Code (code)
 PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:${PATH}"
 export PATH
+# Golang
+PATH="/usr/local/go/bin:${PATH}"
+export PATH
