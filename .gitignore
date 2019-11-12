@@ -1,4 +1,5 @@
 # Ignore the local defined variables, aliases and functions.
 */.local
+fish/local.fish
 
 .DS_Store
