@@ -3,17 +3,37 @@
 read -p "Do you want to install the dotfiles? Remark this will overwrite exisiting dotfiles! [y|n] " -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit; fi
 
-echo "Linking profile files and directories..."
+read -p "Do you want to install BASH or FISH dotfiles? [BASH|FISH] " -r
 dotfiles="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# Files e.g.: runcom/bash_profile runcom/bashrc vim vim/gvimrc vim/vimrc ...
-for file in runcom/bash_profile runcom/bashrc; do
-    homefile=~/.`echo $file | sed -Ee 's/[a-z]+\///'` #This regular expression removes the folder before the filename. e.g.: vim/vimrc --> vimrc
-    if [ -e $homefile ]; then
-        cp $homefile ${homefile}_old
+if [[ $REPLY == "BASH" ]]; then
+    echo "Installing Bash dotfiles"
+    echo "Linking profile files and directories..."
+    # Files e.g.: runcom/bash_profile runcom/bashrc vim vim/gvimrc vim/vimrc ...
+    for file in runcom/bash_profile runcom/bashrc; do
+        homefile=~/.`echo $file | sed -Ee 's/[a-z]+\///'` #This regular expression removes the folder before the filename. e.g.: vim/vimrc --> vimrc
+        if [ -e $homefile ]; then
+            cp $homefile ${homefile}_old
+        fi
+        rm -rf "$homefile" 2>/dev/null
+        ln -s "$dotfiles/$file" "$homefile"
+    done
+elif [[ $REPLY == "FISH" ]]; then
+    echo "Installing Fish dotfiles"
+    configfolder=~/.config
+    if [ ! -d $configfolder ]; then
+        echo ".config folder didn't exist. Creating it..."
+        mkdir $configfolder
     fi
-    rm -rf "$homefile" 2>/dev/null
-    ln -s "$dotfiles/$file" "$homefile"
-done
+    fishfolder="$configfolder/fish"
+    if [ -d $fishfolder ]; then
+        echo "Fish folder was already present. Renaming old folder to fish_old..."
+        cp -r $fishfolder ${fishfolder}_old
+    fi
+    rm -rf "$fishfolder" 2>/dev/null
+    ln -s "$dotfiles/fish" "$fishfolder"
+else
+    exit;
+fi
 
 # echo "Setting up git..."
 # $dotfiles/bin/git-setup-prefs
