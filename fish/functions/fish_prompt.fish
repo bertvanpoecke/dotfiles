@@ -43,17 +43,17 @@ set __fish_git_prompt_color_upstream_ahead green
 set __fish_git_prompt_color_upstream_behind red
 
 # Icons
-set __fish_git_prompt_char_cleanstate ' 👍  '
-set __fish_git_prompt_char_conflictedstate ' ⚠️  '
-set __fish_git_prompt_char_dirtystate ' 💩  '
-set __fish_git_prompt_char_invalidstate ' 🤮  '
-set __fish_git_prompt_char_stagedstate ' 🚥  '
-set __fish_git_prompt_char_stashstate ' 📦  '
+set __fish_git_prompt_char_cleanstate ' 👍 '
+set __fish_git_prompt_char_conflictedstate ' ⚠️ '
+set __fish_git_prompt_char_dirtystate ' 💩 '
+set __fish_git_prompt_char_invalidstate ' 🤮 '
+set __fish_git_prompt_char_stagedstate ' 🚥 '
+set __fish_git_prompt_char_stashstate ' 📦 '
 set __fish_git_prompt_char_stateseparator ' | '
-set __fish_git_prompt_char_untrackedfiles ' 🔍  '
-set __fish_git_prompt_char_upstream_ahead ' ☝️  '
-set __fish_git_prompt_char_upstream_behind ' 👇  '
-set __fish_git_prompt_char_upstream_diverged ' 🚧  '
+set __fish_git_prompt_char_untrackedfiles ' 🔍 '
+set __fish_git_prompt_char_upstream_ahead ' ☝️ '
+set __fish_git_prompt_char_upstream_behind ' 👇 '
+set __fish_git_prompt_char_upstream_diverged ' 🚧 '
 set __fish_git_prompt_char_upstream_equal ' 💯 '
 
 
@@ -73,5 +73,5 @@ function fish_prompt --description 'Write out the prompt'
 			set suffix '$'
 	end
 
-	echo -n -s (set_color grey) '[' (set_color $fish_color_user) "$USER" (set_color normal) @ (set_color $fish_color_host) (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (__fish_git_prompt) (set_color normal) ' ' "$suffix "
+	echo -n -s (set_color $fish_color_user) "$USER" (set_color normal) @ (set_color $fish_color_host) (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) (__fish_git_prompt) (set_color normal) ' ' "$suffix "
 end
