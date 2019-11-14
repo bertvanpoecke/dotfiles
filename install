@@ -38,12 +38,14 @@ fi
 # echo "Setting up git..."
 # $dotfiles/bin/git-setup-prefs
 
-read -p "Do you also want to reset macOS defaults? Remark this will overwrite exisiting settings! [iamsure] " -r
-if [[ $REPLY == "iamsure" ]]; then
-    echo "Setting up macOS defaults..."
-    # source $dotfiles/system/.defaults_macos
-else
-    echo "macOS defaults are NOT set."
+if $dotfiles/bin/is-macos; then
+    read -p "Do you also want to reset macOS defaults? Remark this will overwrite exisiting settings! [iamsure] " -r
+    if [[ $REPLY == "iamsure" ]]; then
+        echo "Setting up macOS defaults..."
+        bash $dotfiles/macos/defaults.sh
+    else
+        echo "macOS defaults are NOT set."
+    fi
 fi
 
 # Clean up
