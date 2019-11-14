@@ -13,8 +13,9 @@ curl -s https://raw.githubusercontent.com/bertvanpoecke/dotfiles/master/bootstra
 When you like to use settings which are local to one workstation, you can optionally add
 * a **.local** file in the **system/** folder for Bash shell related settings.
 * a **local.fish** file in the **fish/** folder for Fish shell related settings.
+
 Add all your local aliases, functions and variables in these files.
-This file will not be pushed to the git repository, because this file is in the .gitignore file.
+These files will not be pushed to the git repository, because they are in the .gitignore file.
 ```
 #!/usr/bin/env bash        //Add this line only for Bash
 
