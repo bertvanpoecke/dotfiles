@@ -1,4 +1,9 @@
-set fish_greeting "Hello Bert"
+set fish_greeting "  ____            _
+ |  _ \          | |
+ | |_) | ___ _ __| |_
+ |  _ < / _ \ '__| __|
+ | |_) |  __/ |  | |_
+ |____/ \___|_|   \__|"
 
 source "$HOME/.config/fish/env.fish"
 source "$HOME/.config/fish/alias.fish"
