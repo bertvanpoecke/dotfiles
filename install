@@ -43,6 +43,8 @@ else
     echo "Git preferences are NOT set."
 fi
 
+bash $dotfiles/vscode/install_vscode_settings.sh
+
 if $dotfiles/bin/is-macos; then
     read -p "Do you also want to reset macOS defaults? Remark this will overwrite exisiting settings! [iamsure] " -r
     if [[ $REPLY == "iamsure" ]]; then
