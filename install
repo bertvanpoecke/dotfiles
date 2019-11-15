@@ -35,8 +35,13 @@ else
     exit;
 fi
 
-# echo "Setting up git..."
-# $dotfiles/bin/git-setup-prefs
+read -p "Do you want to set up git preferences? Remark this will overwrite exisiting settings! [iamsure] " -r
+if [[ $REPLY == "iamsure" ]]; then
+    echo "Setting up git..."
+    $dotfiles/bin/git-setup-prefs
+else
+    echo "Git preferences are NOT set."
+fi
 
 if $dotfiles/bin/is-macos; then
     read -p "Do you also want to reset macOS defaults? Remark this will overwrite exisiting settings! [iamsure] " -r
