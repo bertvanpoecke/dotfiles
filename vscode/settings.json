@@ -7,5 +7,17 @@
     "editor.tabSize": 4,
     "files.trimTrailingWhitespace": true,
     "window.openFilesInNewWindow": "off",
-    "window.zoomLevel": -1
+    "window.zoomLevel": -1,
+    "workbench.iconTheme": "vscode-icons",
+    "go.formatTool": "goimports",
+    "[go]": {"editor.formatOnSave": true},
+    "workbench.editor.enablePreview": false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000,
+    "workbench.startupEditor": "newUntitledFile",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    // "go.buildFlags": [
+    //     "-mod=vendor"
+    // ]
 }
