@@ -16,9 +16,13 @@ set -x VSCODE_APP "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app
 # Don’t sent analytics for Homebrew
 set -x HOMEBREW_NO_ANALYTICS 1
 
+## FISHDOTFILES
+set -x FISHDOTFILES (readlink $HOME/.config/fish)
 ## DOTFILES
-set -x DOTFILES "$HOME/.config/fish"
+set -x DOTFILES (dirname $FISHDOTFILES)
 
 ## PATH
+# Make personal utilities available
+set PATH $DOTFILES/bin $PATH
 # Visual Studio Code
 set PATH /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin $PATH
