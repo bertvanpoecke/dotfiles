@@ -21,7 +21,7 @@ newtag="$recenttagsuffix$delimiter$newtagnumber"
 # echo $begintag
 # echo $newnumber
 
-git tag -a $newtag -m $1
+git tag -a $newtag -m "$1"
 
 echo "Tag $newtag added."
 echo "Current git tags:"
