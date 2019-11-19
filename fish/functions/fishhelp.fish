@@ -1,10 +1,10 @@
 function fishhelp --description 'Show all custom defined aliases and functions.'
 	echo "## CUSTOM ALIASES:"
-	cat "$DOTFILES/alias.fish" | grep '^##\|^alias'
+	cat "$FISHDOTFILES/alias.fish" | grep '^##\|^alias'
 	echo
 	echo
 	echo "## CUSTOM FUNCTIONS:"
-	for file in $DOTFILES/functions/*.fish
+	for file in $FISHDOTFILES/functions/*.fish
 		cat $file | grep '^function'
 	end
 end

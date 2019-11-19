@@ -5,4 +5,5 @@ function c --description '`c` with no arguments opens the current directory in V
 	else
 		code .
 	end
+	set -e argcount
 end

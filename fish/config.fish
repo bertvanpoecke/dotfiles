@@ -5,10 +5,14 @@ set fish_greeting "  ____            _
  | |_) |  __/ |  | |_
  |____/ \___|_|   \__|"
 
-source "$HOME/.config/fish/env.fish"
-source "$HOME/.config/fish/alias.fish"
+set fishfolder (readlink $HOME/.config/fish)
+source "$fishfolder/env.fish"
+source "$fishfolder/alias.fish"
 
-set localfile "$HOME/.config/fish/local.fish"
+set localfile "$fishfolder/local.fish"
 if test -e $localfile
-	source "$HOME/.config/fish/local.fish"
+	source $localfile
 end
+
+set -e localfile
+set -e fishfolder
