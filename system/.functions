@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
 ## GENERAL
+# Change the default shell to Fish
+function tofish()
+{
+    chsh -s /usr/local/bin/fish
+}
+
 # Get named var (usage: get "VAR_NAME")
 function get()
 {
