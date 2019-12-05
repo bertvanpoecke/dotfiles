@@ -17,6 +17,11 @@
     "workbench.startupEditor": "newUntitledFile",
     "diffEditor.ignoreTrimWhitespace": true,
     "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "gitProjectManager.openInNewWindow": true,
+    "gitProjectManager.checkRemoteOrigin": false,
+    "gitProjectManager.baseProjectsFolders": [
+        "~/go/src/bitbucket.org/be-mobile"
+    ],
     // "go.buildFlags": [
     //     "-mod=vendor"
     // ]
