@@ -22,6 +22,10 @@
     "gitProjectManager.baseProjectsFolders": [
         "~/go/src/bitbucket.org/be-mobile"
     ],
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
     // "go.buildFlags": [
     //     "-mod=vendor"
     // ]
