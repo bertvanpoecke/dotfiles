@@ -4,6 +4,7 @@ SETUVAR --export --path GOPATH:/Users/bertvanpoecke/go
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
@@ -15,6 +16,7 @@ SETUVAR fish_color_error:ff0000
 SETUVAR fish_color_escape:00a6b2
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:cyan
+SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:00a6b2
@@ -23,6 +25,7 @@ SETUVAR fish_color_quote:999900
 SETUVAR fish_color_redirection:00afff
 SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
 SETUVAR fish_color_user:blue
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:\x20\x20____\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20_\x0a\x20\x7c\x20\x20_\x20\x5c\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x7c\x20\x7c\x0a\x20\x7c\x20\x7c_\x29\x20\x7c\x20___\x20_\x20__\x7c\x20\x7c_\x0a\x20\x7c\x20\x20_\x20\x3c\x20/\x20_\x20\x5c\x20\x27__\x7c\x20__\x7c\x0a\x20\x7c\x20\x7c_\x29\x20\x7c\x20\x20__/\x20\x7c\x20\x20\x7c\x20\x7c_\x0a\x20\x7c____/\x20\x5c___\x7c_\x7c\x20\x20\x20\x5c__\x7c
