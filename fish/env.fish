@@ -8,9 +8,11 @@ set -x PROJECTS_FOLDER "~/projects"
 set -x EDITOR "nano"
 
 ## PROGRAMS
-set -x BRAVE_APP "/Applications/Brave\ Browser.app/"
+set -x BRAVE_APP "/Applications/Brave Browser.app/"
 set -x PREVIEW_APP "/System/Applications/Preview.app/"
 set -x VSCODE_APP "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+set -x MAIL_APP "/Applications/Microsoft Outlook.app/"
+set -x SLACK_APP "/Applications/Slack.app/"
 
 ## HOMEBREW
 # Don’t sent analytics for Homebrew

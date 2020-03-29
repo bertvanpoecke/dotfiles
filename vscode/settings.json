@@ -17,6 +17,15 @@
     "workbench.startupEditor": "newUntitledFile",
     "diffEditor.ignoreTrimWhitespace": true,
     "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "gitProjectManager.openInNewWindow": true,
+    "gitProjectManager.checkRemoteOrigin": false,
+    "gitProjectManager.baseProjectsFolders": [
+        "~/go/src/bitbucket.org/be-mobile"
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
     // "go.buildFlags": [
     //     "-mod=vendor"
     // ]
