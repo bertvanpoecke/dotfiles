@@ -1,0 +1,43 @@
+ #######################################
+ ### File manipulation documentation ###
+ #######################################
+
+ ## Head of gzip
+ cat file.gz | gunzip | head -n 500 | gzip > file_head.gz
+ gzip -cd file.gz | head -n 500 | gzip > file_head.gz
+
+ ## Get column in csv
+ # indexing of f starts at 1
+ cut -d ';' -f 1 file.csv
+
+ ## Sort
+ # on version (e.g. 2 comes before 11)
+ sort -V file.txt
+ # on column (-k means from-to column, -t means delimiter)
+ sort -t ";" -k 5,5n -o output.csv input.csv
+
+ ## Unique values (with counts for each value)
+ uniq (-c)
+
+ ## Substitute/translate all occuring strings to another string
+ tr ',' '\n'
+
+ ## Invert grep
+ grep -v 'grepstring'
+
+ ## Prefix/suffix to lines in file
+ cat file.txt | awk '{ print $0";0" }'
+
+ ## Get lines with specific value in column
+ awk -F';' '$5 == "1"'
+
+ ## Replace header of file by another file
+ ( head -1 file2.csv; tail -n +2 file1.csv ) >file3.csv && mv file3.csv file1.csv
+
+
+ ## Examples
+ cat trips.csv.gz  | gunzip | cut -f 4 -d ';' | tr ',' '\n' | sort -V | uniq -c > trips_uniq_count.csv
+
+
+ ## Basemap fetch
+ curl "https://bla.biz/bla/bla.zip" --user <user>:<password> --output latest.zip

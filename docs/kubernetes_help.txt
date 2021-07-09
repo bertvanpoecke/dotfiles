@@ -1,0 +1,17 @@
+// set current context
+kubectl config use-context fcd-rerun-kube-prod-a
+
+// delete (and restart) pod
+kubectl delete pod -n gtfs pod1-28ttz pod2-ztgfx pod3-2vdql
+
+// set context to correct namespace
+kubectl config set-context --current --namespace=<namespacename>
+// list configured secrets in the namespace
+kubectl get secrets
+// which data fields are available in the secret:
+kubectl describe secrets/cassandra-point-of-interest-historical-data-api-staging
+// view the actual contents of the secrets
+kubectl get secret <secretname> -o jsonpath='{.data}'
+// show the contents of "common" config map:
+kubectl describe configmap common
+

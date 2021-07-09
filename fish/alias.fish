@@ -15,7 +15,16 @@ alias p "cd $PROJECTS_FOLDER"
 ## GIT
 alias g git
 alias gs "git status"
+alias gch "git checkout"
+alias gm "git merge"
 alias ga "git add -A"
+alias githelp "cat $DOTFILES/docs/git_help.txt"
+
+## Kubernetes
+alias kubehelp "cat $DOTFILES/docs/kubernetes_help.txt"
+
+## Filemanipulation
+alias filemanipulation "cat $DOTFILES/docs/filemanipulation.txt"
 
 ## OPEN
 # Brave Browser
@@ -38,3 +47,9 @@ alias hide "defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop "defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop "defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+## STORAGE
+# Shows the 10 largest folders/files on disk
+alias storage "du -a * | sort -r -n | head -10"
+# Shows the free storage on the Macintosh HD
+alias frees "df -H /System/Volumes/Data"

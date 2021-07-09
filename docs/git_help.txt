@@ -1,0 +1,13 @@
+git checkout <branch to branch from>
+git branch <branch>
+git checkout <branch>
+git push -u origin <branch>
+
+git checkout -b <branch>
+
+git fetch --prune       # sync local branches with remote branches
+git branch -d <branch>  # delete local branch
+
+https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+git checkout feature
+git rebase main

@@ -33,6 +33,7 @@ set magenta (set_color magenta)
 set normal (set_color normal)
 set red (set_color red)
 set yellow (set_color yellow)
+set darkgrey (set_color 828282)
 
 set __fish_git_prompt_color_branch magenta --bold
 set __fish_git_prompt_color_dirtystate white
@@ -73,5 +74,6 @@ function fish_prompt --description 'Write out the prompt'
 			set suffix '$'
 	end
 
-	echo -n -s (set_color $fish_color_user) "$USER" (set_color normal) @ (set_color $fish_color_host) (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) (__fish_git_prompt) (set_color normal) ' ' "$suffix "
+	set -l timestring (date "+%H:%M")
+	echo -n -s $darkgrey "($timestring) " (set_color $fish_color_user) "$USER" (set_color normal) @ (set_color $fish_color_host) (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) (__fish_git_prompt) (set_color normal) \n "$suffix "
 end
