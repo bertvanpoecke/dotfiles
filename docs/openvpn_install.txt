@@ -1,0 +1,14 @@
+# Steps to install OpenVPN on MacOS
+
+See: https://github.com/Homebrew/brew/blob/5b9a43a370120a76883e79b82a9a8e06441680fe/docs/How-to-build-software-outside-Homebrew-with-Homebrew-keg-only-dependencies.md
+
+brew install openssl@1.1
+
+set PATH /usr/local/opt/openssl/bin $PATH
+./configure OPENSSL_CFLAGS=-I/usr/local/opt/openssl/include OPENSSL_LIBS="-L/usr/local/opt/openssl/lib -lssl -lcrypto"
+
+make
+make install
+
+
+(make uninstall)
