@@ -18,10 +18,22 @@ alias gs "git status"
 alias gch "git checkout"
 alias gm "git merge"
 alias ga "git add -A"
+alias gfp "git fetch --prune"
+alias gpu "git push -u origin"
+alias gbl "git branch -l"
+alias gbfd "git branch -fd"
 alias githelp "cat $DOTFILES/docs/git_help.txt"
+
+alias bb "open https://bitbucket.org/dashboard/repositories"
 
 ## Kubernetes
 alias kubehelp "cat $DOTFILES/docs/kubernetes_help.txt"
+
+## Docker
+alias dockerhelp "cat $DOTFILES/docs/docker_help.txt"
+alias compose "cd $DOCKERCOMPOSE_FOLDER"
+alias dup "docker compose up -d"
+alias ddown "docker compose down"
 
 ## Filemanipulation
 alias filemanipulation "cat $DOTFILES/docs/filemanipulation.txt"

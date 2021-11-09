@@ -41,3 +41,6 @@
 
  ## Basemap fetch
  curl "https://bla.biz/bla/bla.zip" --user <user>:<password> --output latest.zip
+
+## Rsync
+rsync -azP --include='filename*.bin' --exclude='*' --compress-level=9 -e ssh root@my-server.be:/path/ .

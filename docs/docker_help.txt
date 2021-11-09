@@ -1,0 +1,8 @@
+// login to dedicated registry
+docker login docker.my-registry.be:5000
+
+// install docker ls
+brew install docker-ls
+
+docker-ls repositories --registry https://docker.my-registry.be:5000/ --user <username> -i
+docker-ls tags --registry https://docker.my-registry.be:5000/ --user <username> -i --json <tag name>

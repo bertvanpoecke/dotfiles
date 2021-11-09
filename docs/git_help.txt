@@ -1,13 +1,19 @@
+# creating branch and push it to origin
 git checkout <branch to branch from>
 git branch <branch>
 git checkout <branch>
 git push -u origin <branch>
+git push --all origin
 
+# create and checkout branch
 git checkout -b <branch>
 
-git fetch --prune       # sync local branches with remote branches
-git branch -d <branch>  # delete local branch
+# cleanup branches
+git fetch --prune        # sync local branches with remote branches
+git branch -d <branch>   # delete local branch
+git branch -fd <branch>  # force delete local branch
 
-https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+# rebasing and merging
+# https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 git checkout feature
 git rebase main

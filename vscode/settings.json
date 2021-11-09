@@ -1,32 +1,49 @@
 // Place your settings in this file to overwrite the default settings
 {
+    // Editor
     "editor.detectIndentation": true,
     "editor.insertSpaces": false,
     "editor.minimap.enabled": true,
     "editor.renderWhitespace": "all",
     "editor.tabSize": 4,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": false,
+    // Files
     "files.trimTrailingWhitespace": true,
-    "window.openFilesInNewWindow": "off",
-    "window.zoomLevel": -1,
-    "workbench.iconTheme": "vscode-icons",
-    "go.formatTool": "goimports",
-    "[go]": {"editor.formatOnSave": true},
-    "workbench.editor.enablePreview": false,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 3000,
-    "workbench.startupEditor": "newUntitledFile",
+    // Window
+    "window.openFilesInNewWindow": "off",
+    "window.zoomLevel": -1,
+    // Workbench
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "none",
+    // Go
+    "go.formatTool": "goimports",
+    "go.lintTool": "golangci-lint",
+    "go.toolsManagement.autoUpdate": true,
+    "[go]": {
+        "editor.formatOnSave": true
+    },
+    // Terminal
+    "terminal.integrated.defaultProfile.osx": "fish",
+    // Git tools
     "diffEditor.ignoreTrimWhitespace": true,
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "gitlens.currentLine.enabled": false,
     "gitProjectManager.openInNewWindow": true,
     "gitProjectManager.checkRemoteOrigin": false,
     "gitProjectManager.baseProjectsFolders": [
-        "~/go/src/bitbucket.org/your-org"
+        "~/go/src/bitbucket.org"
     ],
+    // Other tools
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "vsicons.dontShowNewVersionMessage": true,
-    // "go.buildFlags": [
-    //     "-mod=vendor"
-    // ]
+    "yaml.schemas": {
+        "file:///Users/bertvanpoecke/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
 }

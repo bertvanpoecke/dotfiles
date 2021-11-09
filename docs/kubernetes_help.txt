@@ -1,11 +1,12 @@
 // set current context
-kubectl config use-context fcd-rerun-kube-prod-a
-
-// delete (and restart) pod
-kubectl delete pod -n gtfs pod1-28ttz pod2-ztgfx pod3-2vdql
+kubectl config use-context <cluster>
 
 // set context to correct namespace
-kubectl config set-context --current --namespace=<namespacename>
+kubectl config set-context --current --namespace=<namespace>
+
+// delete (and restart) pod
+kubectl delete pod -n <namespace> pod1-28ttz pod2-ztgfx pod3-2vdql
+
 // list configured secrets in the namespace
 kubectl get secrets
 // which data fields are available in the secret:
@@ -15,3 +16,12 @@ kubectl get secret <secretname> -o jsonpath='{.data}'
 // show the contents of "common" config map:
 kubectl describe configmap common
 
+// execute terminal of pod
+kubectl exec --stdin --tty <pod> -- /bin/ash
+
+// port forwarding of pod
+kubectl port-forward --namespace <namespace> <pod> <port>
+kubectl port-forward --namespace <namespace> <pod> <port:portInPod>
+
+// get k8s logs
+kubectl --context <cluster> --namespace <namespace> logs <pod> -c <container> > /output.log

@@ -3,6 +3,7 @@ set -x DOCUMENTS_FOLDER "~/Documents"
 set -x DESKTOP_FOLDER "~/Desktop"
 set -x DOWNLOADS_FOLDER "~/Downloads"
 set -x PROJECTS_FOLDER "~/projects"
+set -x DOCKERCOMPOSE_FOLDER "$PROJECTS_FOLDER/docker-compose-files"
 
 ## EDITOR
 set -x EDITOR "nano"
