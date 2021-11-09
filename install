@@ -53,6 +53,13 @@ if $dotfiles/bin/is-macos; then
     else
         echo "macOS defaults are NOT set."
     fi
+    read -p "Do you also want to brew install some tools? [iamsure] " -r
+    if [[ $REPLY == "iamsure" ]]; then
+        echo "Installing tools with brew..."
+        bash $dotfiles/macos/brew.sh
+    else
+        echo "brew tools are NOT installed."
+    fi
 fi
 
 # Clean up
