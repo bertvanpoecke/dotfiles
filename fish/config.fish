@@ -16,3 +16,6 @@ end
 
 set -e localfile
 set -e fishfolder
+
+# install asdf for fish
+source /usr/local/opt/asdf/libexec/asdf.fish

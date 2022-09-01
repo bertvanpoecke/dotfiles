@@ -6,3 +6,6 @@ brew install docker-ls
 
 docker-ls repositories --registry https://docker.my-registry.be:5000/ --user <username> -i
 docker-ls tags --registry https://docker.my-registry.be:5000/ --user <username> -i --json <tag name>
+
+// run command inside docker container
+docker run -it --rm --entrypoint /bin/bash golang:1.18.1-alpine3.15 -c "golangci-lint version"

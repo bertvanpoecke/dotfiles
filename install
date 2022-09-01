@@ -60,6 +60,13 @@ if $dotfiles/bin/is-macos; then
     else
         echo "brew tools are NOT installed."
     fi
+    read -p "Do you also want to install asdf tools? [iamsure] " -r
+    if [[ $REPLY == "iamsure" ]]; then
+        echo "Installing asdf tools..."
+        bash $dotfiles/macos/asdf/asdf.sh
+    else
+        echo "asdf tools are NOT installed."
+    fi
 fi
 
 # Clean up

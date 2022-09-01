@@ -12,6 +12,9 @@ alias dl "cd $DOWNLOADS_FOLDER"
 alias dt "cd $DESKTOP_FOLDER"
 alias p "cd $PROJECTS_FOLDER"
 
+alias tree "tree -L 3"
+alias treed "tree -d -L 3"
+
 ## GIT
 alias g git
 alias gs "git status"
@@ -34,6 +37,7 @@ alias dockerhelp "cat $DOTFILES/docs/docker_help.txt"
 alias compose "cd $DOCKERCOMPOSE_FOLDER"
 alias dup "docker compose up -d"
 alias ddown "docker compose down"
+alias akhq "docker compose -f $DOCKERCOMPOSE_FOLDER/akhq/docker-compose.yaml up -d && sleep 5 && open http://localhost:8080"
 
 ## Filemanipulation
 alias filemanipulation "cat $DOTFILES/docs/filemanipulation.txt"

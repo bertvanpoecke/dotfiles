@@ -32,7 +32,10 @@ brew install helm
 brew install helmfile
 brew install kafkactl
 brew install rclone
+brew install awscli
 brew install tree
+brew install k9s
+brew install asdf
 
 # Remove outdated versions from the cellar.
 brew cleanup

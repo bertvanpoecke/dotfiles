@@ -1,5 +1,6 @@
 # Ignore the local defined variables, aliases and functions.
 */.local
 fish/local.fish
+bin/local
 
 .DS_Store

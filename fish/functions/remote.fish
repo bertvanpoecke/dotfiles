@@ -22,7 +22,8 @@ function remote --description 'Open git repo on remote'
 	set -lx website (git-remote-website-url $remoteuri)
 
 	if test -n "$website"
-		echo $website
-		open $website
+		set -lx commitpage $website/commits
+		echo $commitpage
+		open $commitpage
 	end
 end

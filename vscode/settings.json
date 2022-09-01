@@ -26,10 +26,13 @@
     "[go]": {
         "editor.formatOnSave": true
     },
+    "gopls": {
+        "build.buildFlags": ["-tags=integration"],
+        "formatting.local": "bitbucket.org/your-org"
+    },
     // Terminal
     "terminal.integrated.defaultProfile.osx": "fish",
     // Git tools
-    "diffEditor.ignoreTrimWhitespace": true,
     "gitlens.currentLine.enabled": false,
     "gitProjectManager.openInNewWindow": true,
     "gitProjectManager.checkRemoteOrigin": false,
@@ -37,13 +40,14 @@
         "~/go/src/bitbucket.org"
     ],
     // Other tools
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
     "vsicons.dontShowNewVersionMessage": true,
-    "yaml.schemas": {
-        "file:///Users/bertvanpoecke/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-    },
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.untrustedFiles": "open",
+    "[markdown]": {
+        "editor.wordWrap": "on"
+    },
+    "vs-kubernetes": {
+        "vscode-kubernetes.kubectl-path.mac": "/Users/bertvanpoecke/.vs-kubernetes/tools/kubectl/kubectl",
+        "vscode-kubernetes.minikube-path.mac": "/Users/bertvanpoecke/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+    }
 }
