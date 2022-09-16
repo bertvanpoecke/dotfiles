@@ -2,5 +2,5 @@ function office --description '`office` opens the apps needed on a regular day a
 	open $BRAVE_APP
 	open $MAIL_APP
 	open $SLACK_APP
-	proj
+	ws
 end

@@ -49,5 +49,6 @@
     "vs-kubernetes": {
         "vscode-kubernetes.kubectl-path.mac": "/Users/bertvanpoecke/.vs-kubernetes/tools/kubectl/kubectl",
         "vscode-kubernetes.minikube-path.mac": "/Users/bertvanpoecke/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-    }
+    },
+    "diffEditor.ignoreTrimWhitespace": false
 }
