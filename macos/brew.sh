@@ -38,6 +38,7 @@ brew install k9s
 brew install asdf
 brew install cyberduck
 brew install sourcetree
+brew install kcat
 
 # Remove outdated versions from the cellar.
 brew cleanup
