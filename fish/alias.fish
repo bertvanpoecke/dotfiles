@@ -22,10 +22,12 @@ alias gch "git checkout"
 alias gm "git merge"
 alias ga "git add -A"
 alias gfp "git fetch --prune"
+alias gpp "git pull && git push"
 alias gpu "git push -u origin"
 alias gbl "git branch -l"
 alias gbfd "git branch -fd"
 alias githelp "cat $DOTFILES/docs/git_help.txt"
+alias gl "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit -n 20"
 
 alias bb "open https://bitbucket.org/dashboard/repositories"
 

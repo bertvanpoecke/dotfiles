@@ -2,7 +2,6 @@
 
 # User
 git config --global user.name  "Bert Van Poecke"
-git config --global user.email "6654029+bertvanpoecke@users.noreply.github.com"
 
 # Core
 git config --global core.editor "nano"

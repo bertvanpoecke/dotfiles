@@ -1,0 +1,7 @@
+openssl s_client -connect google.com:443 -showcerts
+
+openssl x509 -in /etc/ssl/certs/ca-cert-Your_Cert.pem -noout -fingerprint -sha256 -inform pem
+openssl x509 -in /etc/ssl/certs/ca-cert-Your_Cert.pem -noout -text
+
+kubectl --context <context> --namespace <namespace> exec -it <pod> -c <container> sh
+/ # openssl x509 -in /etc/ssl/certs/ca-cert-Your_Cert.pem -noout -text

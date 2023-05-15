@@ -23,9 +23,9 @@
 # Options
 set -g fish_prompt_pwd_dir_length 0
 
-set __fish_git_prompt_show_informative_status
-set __fish_git_prompt_showcolorhints
-set __fish_git_prompt_showupstream "informative"
+set __fish_git_prompt_show_informative_status 'true'
+set __fish_git_prompt_showcolorhints 'true'
+set __fish_git_prompt_showupstream 'informative'
 
 # Colors
 set green (set_color green)
@@ -52,7 +52,7 @@ set __fish_git_prompt_char_stagedstate ' 🚥 '
 set __fish_git_prompt_char_stashstate ' 📦 '
 set __fish_git_prompt_char_stateseparator ' | '
 set __fish_git_prompt_char_untrackedfiles ' 🔍 '
-set __fish_git_prompt_char_upstream_ahead ' ☝️ '
+set __fish_git_prompt_char_upstream_ahead ' 👆 '
 set __fish_git_prompt_char_upstream_behind ' 👇 '
 set __fish_git_prompt_char_upstream_diverged ' 🚧 '
 set __fish_git_prompt_char_upstream_equal ' 💯 '
@@ -75,5 +75,5 @@ function fish_prompt --description 'Write out the prompt'
 	end
 
 	set -l timestring (date "+%H:%M")
-	echo -n -s $darkgrey "($timestring) " (set_color $fish_color_user) "$USER" (set_color normal) @ (set_color $fish_color_host) (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) (__fish_git_prompt) (set_color normal) \n "$suffix "
+	echo -n -s $darkgrey "($timestring) " (set_color $fish_color_user) "$USER" (set_color normal) @ (set_color $fish_color_host) (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) (fish_git_prompt) (set_color normal) \n "$suffix "
 end

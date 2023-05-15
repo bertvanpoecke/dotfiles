@@ -4,8 +4,8 @@
 
 if ! command -v brew &> /dev/null
 then
-    echo "brew could not be found"
-    exit
+    echo "brew could not be found. Trying to install..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Make sure we’re using the latest Homebrew.
@@ -22,7 +22,7 @@ BREW_PREFIX=$(brew --prefix)
 # Install fish command line
 brew install fish
 
-# Install other tools
+# Install other command line tools
 brew install docker-ls
 brew install duck
 brew install gcc
@@ -36,9 +36,19 @@ brew install awscli
 brew install tree
 brew install k9s
 brew install asdf
-brew install cyberduck
-brew install sourcetree
 brew install kcat
+brew install cmake
+brew install jq
+
+# Install GUI tools
+brew install --cask sourcetree
+brew install --cask cyberduck
+brew install --cask slack
+brew install --cask spotify
+brew install --cask visual-studio-code
+brew install --cask brave-browser
+brew install --cask docker
+brew install --cask signal
 
 # Remove outdated versions from the cellar.
 brew cleanup
