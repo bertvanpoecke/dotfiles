@@ -12,5 +12,7 @@ function fishhelp --description 'Show all custom defined aliases and functions.'
 		echo
 		echo "## LOCAL ALIASES:"
 		cat "$FISHDOTFILES/local.fish" | grep '^alias'
+		echo "## LOCAL FUNCTIONS:"
+		cat "$FISHDOTFILES/local.fish" | grep '^function'
 	end
 end
