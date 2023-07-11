@@ -23,39 +23,39 @@
 # Options
 set -g fish_prompt_pwd_dir_length 0
 
-set __fish_git_prompt_show_informative_status 'true'
-set __fish_git_prompt_showcolorhints 'true'
-set __fish_git_prompt_showupstream 'informative'
+set -g __fish_git_prompt_show_informative_status 'true'
+set -g __fish_git_prompt_showcolorhints 'true'
+set -g __fish_git_prompt_showupstream 'informative'
 
 # Colors
-set green (set_color green)
-set magenta (set_color magenta)
-set normal (set_color normal)
-set red (set_color red)
-set yellow (set_color yellow)
-set darkgrey (set_color 828282)
+set -g green (set_color green)
+set -g magenta (set_color magenta)
+set -g normal (set_color normal)
+set -g red (set_color red)
+set -g yellow (set_color yellow)
+set -g darkgrey (set_color 828282)
 
-set __fish_git_prompt_color_branch magenta --bold
-set __fish_git_prompt_color_dirtystate white
-set __fish_git_prompt_color_invalidstate red
-set __fish_git_prompt_color_merging yellow
-set __fish_git_prompt_color_stagedstate yellow
-set __fish_git_prompt_color_upstream_ahead green
-set __fish_git_prompt_color_upstream_behind red
+set -g __fish_git_prompt_color_branch magenta --bold
+set -g __fish_git_prompt_color_dirtystate white
+set -g __fish_git_prompt_color_invalidstate red
+set -g __fish_git_prompt_color_merging yellow
+set -g __fish_git_prompt_color_stagedstate yellow
+set -g __fish_git_prompt_color_upstream_ahead green
+set -g __fish_git_prompt_color_upstream_behind red
 
 # Icons
-set __fish_git_prompt_char_cleanstate ' 👍 '
-set __fish_git_prompt_char_conflictedstate ' ⚠️ '
-set __fish_git_prompt_char_dirtystate ' 💩 '
-set __fish_git_prompt_char_invalidstate ' 🤮 '
-set __fish_git_prompt_char_stagedstate ' 🚥 '
-set __fish_git_prompt_char_stashstate ' 📦 '
-set __fish_git_prompt_char_stateseparator ' | '
-set __fish_git_prompt_char_untrackedfiles ' 🔍 '
-set __fish_git_prompt_char_upstream_ahead ' 👆 '
-set __fish_git_prompt_char_upstream_behind ' 👇 '
-set __fish_git_prompt_char_upstream_diverged ' 🚧 '
-set __fish_git_prompt_char_upstream_equal ' 💯 '
+set -g __fish_git_prompt_char_cleanstate ' 👍 '
+set -g __fish_git_prompt_char_conflictedstate ' ⚠️ '
+set -g __fish_git_prompt_char_dirtystate ' 💩 '
+set -g __fish_git_prompt_char_invalidstate ' 🤮 '
+set -g __fish_git_prompt_char_stagedstate ' 🚥 '
+set -g __fish_git_prompt_char_stashstate ' 📦 '
+set -g __fish_git_prompt_char_stateseparator ' | '
+set -g __fish_git_prompt_char_untrackedfiles ' 🔍 '
+set -g __fish_git_prompt_char_upstream_ahead ' 👆 '
+set -g __fish_git_prompt_char_upstream_behind ' 👇 '
+set -g __fish_git_prompt_char_upstream_diverged ' 🚧 '
+set -g __fish_git_prompt_char_upstream_equal ' 💯 '
 
 
 function fish_prompt --description 'Write out the prompt'
