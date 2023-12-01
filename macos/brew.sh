@@ -49,6 +49,8 @@ brew install --cask visual-studio-code
 brew install --cask brave-browser
 brew install --cask docker
 brew install --cask signal
+brew install --cask maccy
+brew install --cask rectangle
 
 # Remove outdated versions from the cellar.
 brew cleanup

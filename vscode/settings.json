@@ -8,12 +8,14 @@
     "editor.tabSize": 4,
     "editor.guides.bracketPairs": true,
     "editor.guides.bracketPairsHorizontal": false,
+    "editor.foldingStrategy": "indentation",
     // Files
     "files.trimTrailingWhitespace": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 3000,
     // Window
     "window.openFilesInNewWindow": "off",
+    "window.newWindowDimensions": "maximized",
     "window.zoomLevel": -1,
     // Workbench
     "workbench.iconTheme": "vscode-icons",
