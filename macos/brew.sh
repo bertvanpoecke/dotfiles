@@ -26,19 +26,17 @@ brew install fish
 brew install docker-ls
 brew install duck
 brew install gcc
-brew install gdal
 brew install golanci-lint
 brew install helm
 brew install helmfile
 brew install kafkactl
 brew install rclone
-brew install awscli
 brew install tree
 brew install k9s
 brew install asdf
-brew install kcat
 brew install cmake
 brew install jq
+brew install openvpn
 
 # Install GUI tools
 brew install --cask sourcetree
@@ -48,9 +46,17 @@ brew install --cask spotify
 brew install --cask visual-studio-code
 brew install --cask brave-browser
 brew install --cask docker
+brew install --cask drawio
+brew install --cask iglance
+brew install --cask postman
 brew install --cask signal
 brew install --cask maccy
 brew install --cask rectangle
+brew install --cask microsoft-office-businesspro
+brew install --cask microsoft-edge
+brew install --cask adobe-acrobat-reader
+brew install --cask logi-options-plus
+brew install --cask tunnelblick
 
 # Remove outdated versions from the cellar.
 brew cleanup
