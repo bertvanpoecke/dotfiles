@@ -74,6 +74,8 @@ function fish_prompt --description 'Write out the prompt'
 			set suffix '$'
 	end
 
+	# fish_git_prompt > /dev/null
+
 	set -l timestring (date "+%H:%M")
 	echo -n -s $darkgrey "($timestring) " (set_color $fish_color_user) "$USER" (set_color normal) @ (set_color $fish_color_host) (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) (fish_git_prompt) (set_color normal) \n "$suffix "
 end

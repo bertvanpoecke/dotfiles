@@ -9,17 +9,13 @@
     "editor.guides.bracketPairs": true,
     "editor.guides.bracketPairsHorizontal": false,
     "editor.foldingStrategy": "indentation",
-    // Files
-    "files.trimTrailingWhitespace": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 3000,
     // Window
     "window.openFilesInNewWindow": "off",
     "window.newWindowDimensions": "maximized",
-    "window.zoomLevel": -1,
     // Workbench
     "workbench.iconTheme": "vscode-icons",
-    "workbench.editor.enablePreview": false,
     "workbench.startupEditor": "none",
     // Go
     "go.formatTool": "goimports",
@@ -52,5 +48,48 @@
         "vscode-kubernetes.kubectl-path.mac": "/Users/bertvanpoecke/.vs-kubernetes/tools/kubectl/kubectl",
         "vscode-kubernetes.minikube-path.mac": "/Users/bertvanpoecke/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "atlascode.jira.jqlList": [
+        {
+            "id": "90c4a43b-5627-45a3-b39e-69e9a089f618",
+            "enabled": true,
+            "name": "My Jira Issues",
+            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+            "siteId": "00000000-0000-0000-0000-000000000000",
+            "monitor": true
+        }
+    ],
+    "window.zoomLevel": -1,
+    "editor.inlineSuggest.showToolbar": "always",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "scm.experimental.showHistoryGraph": true,
+    "inlineChat.experimental.textButtons": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "dynamic csv": false
+    },
+    "workbench.editor.enablePreview": false,
+    "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+    },
+    "atlascode.jira.enabled": false,
+    "files.trimTrailingWhitespace": true,
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
 }

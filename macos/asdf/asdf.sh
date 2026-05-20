@@ -17,6 +17,7 @@ mkdir -p ~/.config/fish/completions; and ln -s ~/.asdf/completions/asdf.fish ~/.
 # Install plugins
 asdf plugin add helm https://github.com/Antiarchitect/asdf-helm.git
 asdf plugin add kubectl https://github.com/asdf-community/asdf-kubectl.git
+asdf plugin add helmfile https://github.com/nwiizo/asdf-helmfile.git
 
 # Link global tool versions file
 filename=".tool-versions"

@@ -14,6 +14,8 @@ set -x PREVIEW_APP "/System/Applications/Preview.app/"
 set -x VSCODE_APP "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 set -x MAIL_APP "/Applications/Microsoft Outlook.app/"
 set -x SLACK_APP "/Applications/Slack.app/"
+set -x NOTES_APP "/Applications/Notion.app/"
+set -x AI_APP "/Applications/Claude.app/"
 
 ## HOMEBREW
 # Don’t sent analytics for Homebrew
@@ -29,3 +31,7 @@ set -x DOTFILES (dirname $FISHDOTFILES)
 set PATH $DOTFILES/bin $PATH
 # Visual Studio Code
 set PATH /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin $PATH
+# Homebrew
+set PATH /opt/homebrew/bin $PATH
+# Local bin
+set PATH ~/.local/bin $PATH

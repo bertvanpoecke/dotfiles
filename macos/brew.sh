@@ -26,7 +26,6 @@ brew install fish
 brew install docker-ls
 brew install duck
 brew install gcc
-brew install golanci-lint
 brew install helm
 brew install helmfile
 brew install kafkactl
@@ -37,6 +36,11 @@ brew install asdf
 brew install cmake
 brew install jq
 brew install openvpn
+brew install node
+brew install stats
+brew install gnupg
+brew install sops
+brew install commitizen
 
 # Install GUI tools
 brew install --cask sourcetree
@@ -47,7 +51,6 @@ brew install --cask visual-studio-code
 brew install --cask brave-browser
 brew install --cask docker
 brew install --cask drawio
-brew install --cask iglance
 brew install --cask postman
 brew install --cask signal
 brew install --cask maccy
@@ -57,6 +60,8 @@ brew install --cask microsoft-edge
 brew install --cask adobe-acrobat-reader
 brew install --cask logi-options-plus
 brew install --cask tunnelblick
+brew install --cask vnc-viewer
+brew install --cask dbeaver-community
 
 # Remove outdated versions from the cellar.
 brew cleanup

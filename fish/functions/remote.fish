@@ -13,7 +13,7 @@ function remote --description 'Open git repo on remote'
 	set -lx tool "git-remote-website-url-cli"
 	set -lx toolGithub "git+https://github.com/bertvanpoecke/git-remote-website-url-cli.git"
 
-	if not npm list --global $tool > /dev/null 2>&1
+	if not type -sq git-remote-website-url
 		echo "$tool not found. installing now..."
 		npm install -g --save $toolGithub
 	end

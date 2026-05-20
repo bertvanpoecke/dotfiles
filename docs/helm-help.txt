@@ -1,0 +1,4 @@
+$ helm template . --set environment=test --set image.tag=0.0.1
+
+// In correct deployment folder of helmchart repos:
+$ helmfile template --file=f-its-middle-tier-api.yaml
