@@ -13,6 +13,6 @@ fish/.config/fish/completions/
 # Local machine-specific overrides (never committed)
 local/fish/local.fish
 local/zsh/zshrc.local
-local/git/gitconfig.local
+local/git/*.local
 local/bin/*
 !local/bin/.gitkeep

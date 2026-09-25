@@ -59,6 +59,27 @@ if [ "$SHELL" != "$ZSH_BIN" ]; then
     chsh -s "$ZSH_BIN"
 fi
 
+# AI agent skills (Claude Code, and any other SKILL.md-compatible tool)
+if [ -d "$DOTFILES/ai/skills" ]; then
+    read -p "==> Link AI agent skills into ~/.claude/skills? [y/N] " -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        mkdir -p "$HOME/.claude/skills"
+        for skill_dir in "$DOTFILES"/ai/skills/*/; do
+            name="$(basename "$skill_dir")"
+            target="$HOME/.claude/skills/$name"
+            if [ -L "$target" ]; then
+                continue
+            fi
+            if [ -e "$target" ]; then
+                echo "==> ~/.claude/skills/$name already exists and isn't a symlink, skipping"
+                continue
+            fi
+            ln -s "${skill_dir%/}" "$target"
+            echo "==> Linked $name"
+        done
+    fi
+fi
+
 # macOS defaults
 if [[ "$(uname)" == "Darwin" ]]; then
     read -p "==> Apply macOS defaults? [y/N] " -r
@@ -81,14 +102,23 @@ if [ -f "$DOTFILES/local/zsh/zshrc.local" ] && [ ! -L "$HOME/.zshrc.local" ]; th
     ln -sf "$DOTFILES/local/zsh/zshrc.local" "$HOME/.zshrc.local"
 fi
 
-if [ -f "$DOTFILES/local/git/gitconfig.local" ] && [ ! -L "$HOME/.gitconfig.local" ]; then
-    if [ -f "$HOME/.gitconfig.local" ]; then
-        echo "==> Backing up existing ~/.gitconfig.local to ~/.gitconfig.local.bak"
-        cp "$HOME/.gitconfig.local" "$HOME/.gitconfig.local.bak"
+# Any real (non-.example) file in local/git/ gets symlinked to ~/.<filename> —
+# covers gitconfig.local plus however many extra identity files you add yourself
+# (e.g. for includeIf blocks you write into your own ~/.gitconfig.local).
+for src in "$DOTFILES"/local/git/*.local; do
+    [ -e "$src" ] || continue
+    name="$(basename "$src")"
+    target="$HOME/.$name"
+    if [ -L "$target" ]; then
+        continue
     fi
-    echo "==> Linking local/git/gitconfig.local → ~/.gitconfig.local"
-    ln -sf "$DOTFILES/local/git/gitconfig.local" "$HOME/.gitconfig.local"
-fi
+    if [ -f "$target" ]; then
+        echo "==> Backing up existing ~/.$name to ~/.$name.bak"
+        cp "$target" "${target}.bak"
+    fi
+    echo "==> Linking local/git/$name → ~/.$name"
+    ln -sf "$src" "$target"
+done
 
 echo ""
 echo "==> Done! Restart your terminal or run: exec zsh"

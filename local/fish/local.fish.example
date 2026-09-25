@@ -10,7 +10,7 @@
 # set -gx IDE_CMD cursor
 
 # Example: aliases for current project
-# alias ws "cd $GOPATH/src/bitbucket.org/your-org"
+# alias ws "cd $GOPATH/src/your-org"
 # alias bin "cd $GOPATH/bin"
 
 # Example: VPN aliases

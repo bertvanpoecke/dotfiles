@@ -25,8 +25,7 @@
         "editor.formatOnSave": true
     },
     "gopls": {
-        "build.buildFlags": ["-tags=integration"],
-        "formatting.local": "bitbucket.org/your-org"
+        "build.buildFlags": ["-tags=integration"]
     },
     // Terminal
     "terminal.integrated.defaultProfile.osx": "zsh",
@@ -44,37 +43,14 @@
     "[markdown]": {
         "editor.wordWrap": "on"
     },
-    "vs-kubernetes": {
-        "vscode-kubernetes.kubectl-path.mac": "${env:HOME}/.vs-kubernetes/tools/kubectl/kubectl",
-        "vscode-kubernetes.minikube-path.mac": "${env:HOME}/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-    },
     "diffEditor.ignoreTrimWhitespace": false,
-    "atlascode.jira.jqlList": [
-        {
-            "id": "90c4a43b-5627-45a3-b39e-69e9a089f618",
-            "enabled": true,
-            "name": "My Jira Issues",
-            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
-            "siteId": "00000000-0000-0000-0000-000000000000",
-            "monitor": true
-        }
-    ],
     "window.zoomLevel": -1,
     "editor.inlineSuggest.showToolbar": "always",
-    "github.copilot.editor.enableAutoCompletions": true,
     "scm.experimental.showHistoryGraph": true,
     "inlineChat.experimental.textButtons": true,
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false,
-        "dynamic csv": false
-    },
     "[yaml]": {
         "diffEditor.ignoreTrimWhitespace": false,
     },
-    "atlascode.jira.enabled": false,
     "files.trimTrailingWhitespace": true,
     "docker.extension.enableComposeLanguageServer": false,
     "[dockercompose]": {

@@ -1,0 +1,6 @@
+# Example extra identity file (gitignored). Copy to local/git/<name>.local and
+# reference it from an includeIf block in your gitconfig.local. install.sh
+# symlinks any *.local file here to ~/.<filename> automatically.
+
+[user]
+	email = you@example-one.com

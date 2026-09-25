@@ -1,7 +1,17 @@
-# gitconfig.local — machine-specific overrides (gitignored)
-# Copy this file to local/git/gitconfig.local and customize it.
-# install.sh symlinks it to ~/.gitconfig.local, which git/.gitconfig includes.
+# gitconfig.local — machine-specific overrides (gitignored).
+# Copy to local/git/gitconfig.local; install.sh symlinks it to ~/.gitconfig.local.
+#
+# Name goes here. Email can be set per directory tree instead, via extra
+# identity files (see gitconfig-extra-*.local.example) included below with
+# gitdir-conditional includes. Outside every tree, no email is set.
+#
+# Uses "gitdir:", not "hasconfig:remote.*.url:" — the latter can't see a
+# remote defined only in a repo's local .git/config from a global config file.
 
 [user]
 	name = Your Name
-	email = you@example.com
+
+[includeIf "gitdir:~/path/to/tree-a/"]
+	path = ~/.gitconfig-extra-a.local
+[includeIf "gitdir:~/path/to/tree-b/"]
+	path = ~/.gitconfig-extra-b.local
