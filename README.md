@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles for macOS, managed with [GNU Stow](https://www.gnu.org/software/stow/).
+Bert's [dotfiles](https://dotfiles.github.io/) for macOS.
 
 ## Structure
 
@@ -21,6 +21,8 @@ dotfiles/
 
 ## Installation
 
+Create any [local overrides](#local-overrides) you need first, so `install.sh` symlinks them in the same pass.
+
 ```bash
 git clone https://github.com/bertvanpoecke/dotfiles ~/projects/dotfiles
 cd ~/projects/dotfiles
@@ -36,7 +38,7 @@ The install script will:
 
 ## How stow works
 
-Each top-level directory is a "package". Running `stow <package>` from the dotfiles directory creates symlinks in `$HOME` that mirror the package structure.
+Packages are managed with [GNU Stow](https://www.gnu.org/software/stow/). Each top-level directory is a "package". Running `stow <package>` from the dotfiles directory creates symlinks in `$HOME` that mirror the package structure.
 
 Example: `fish/.config/fish/config.fish` → `~/.config/fish/config.fish`
 
