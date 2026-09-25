@@ -1,0 +1,26 @@
+# local.fish — machine-specific overrides (gitignored)
+# Copy this file to $DOTFILES/local/fish/local.fish and customize it.
+# This file is sourced at the end of config.fish when present.
+
+# Example: Go setup
+# set -x -U GOPATH (go env GOPATH)
+# set PATH (go env GOPATH)/bin $PATH
+
+# IDE: code (default) or cursor
+# set -gx IDE_CMD cursor
+
+# Example: aliases for current project
+# alias ws "cd $GOPATH/src/bitbucket.org/your-org"
+# alias bin "cd $GOPATH/bin"
+
+# Example: VPN aliases
+# alias prodvpn "bash $DOTFILES/local/bin/vpn-prod"
+# alias hqvpn "bash $DOTFILES/local/bin/vpn-hq"
+# alias kvpn "sudo pkill -l openvpn"
+# alias getvpn "pgrep -l openvpn"
+
+# Example: local functions
+# function updategolang
+#     set -l newversion (curl 'https://go.dev/VERSION?m=text' --silent | head -n 1)
+#     echo "Updating to $newversion..."
+# end

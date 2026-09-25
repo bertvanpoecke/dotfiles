@@ -29,7 +29,7 @@
         "formatting.local": "bitbucket.org/your-org"
     },
     // Terminal
-    "terminal.integrated.defaultProfile.osx": "fish",
+    "terminal.integrated.defaultProfile.osx": "zsh",
     // Git tools
     "gitlens.currentLine.enabled": false,
     "gitProjectManager.openInNewWindow": true,
@@ -45,8 +45,8 @@
         "editor.wordWrap": "on"
     },
     "vs-kubernetes": {
-        "vscode-kubernetes.kubectl-path.mac": "/Users/bertvanpoecke/.vs-kubernetes/tools/kubectl/kubectl",
-        "vscode-kubernetes.minikube-path.mac": "/Users/bertvanpoecke/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+        "vscode-kubernetes.kubectl-path.mac": "${env:HOME}/.vs-kubernetes/tools/kubectl/kubectl",
+        "vscode-kubernetes.minikube-path.mac": "${env:HOME}/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
     "diffEditor.ignoreTrimWhitespace": false,
     "atlascode.jira.jqlList": [
@@ -71,7 +71,6 @@
         "scminput": false,
         "dynamic csv": false
     },
-    "workbench.editor.enablePreview": false,
     "[yaml]": {
         "diffEditor.ignoreTrimWhitespace": false,
     },
@@ -92,4 +91,9 @@
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
+    "gitProjectManager.maxDepthRecursion": 2,
+    "gitProjectManager.storeRepositoriesBetweenSessions": true,
+    "claudeCode.preferredLocation": "sidebar",
+    "chat.disableAIFeatures": true,
+    "workbench.editor.enablePreview": false,
 }

@@ -1,0 +1,5 @@
+# zshrc.local — machine-specific overrides (gitignored)
+# Copy to local/zsh/zshrc.local (install.sh links it to ~/.zshrc.local)
+
+# IDE: code (default) or cursor
+# export IDE_CMD=cursor

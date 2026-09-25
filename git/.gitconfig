@@ -1,0 +1,39 @@
+[include]
+	path = ~/.gitconfig.local
+
+[core]
+	editor = nano
+	whitespace = trailing-space,space-before-tab
+	excludesfile = ~/.gitignore_global
+
+[alias]
+	co  = checkout
+	c   = commit
+	cm  = commit -m
+	ca  = commit -a
+	cam = commit -a -m
+	t   = tag -l
+	d   = diff
+	s   = status
+	lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit -n 20
+
+[color]
+	diff        = auto
+	status      = auto
+	branch      = auto
+	interactive = auto
+
+[push]
+	followTags = true
+	default    = current
+
+[pull]
+	rebase = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/

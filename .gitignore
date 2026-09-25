@@ -1,6 +1,18 @@
-# Ignore the local defined variables, aliases and functions.
-*/.local
-fish/local.fish
-bin/local
-
+# macOS
 .DS_Store
+**/.DS_Store
+
+# Claude Code
+.claude/
+
+# Fish machine-specific state (managed by fish itself)
+fish/.config/fish/fish_variables
+fish/.config/fish/conf.d/
+fish/.config/fish/completions/
+
+# Local machine-specific overrides (never committed)
+local/fish/local.fish
+local/zsh/zshrc.local
+local/git/gitconfig.local
+local/bin/*
+!local/bin/.gitkeep

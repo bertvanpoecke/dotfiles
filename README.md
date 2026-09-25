@@ -1,31 +1,62 @@
-# Dotfiles
-Bert's [dotfiles](https://dotfiles.github.io/).
+# dotfiles
 
-They are based on Lars Kappert's [tutorial](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789) and [dotfiles](https://github.com/webpro/dotfiles), as well as the dotfiles of [Ruben Verborgh](https://github.com/RubenVerborgh/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles).
+Personal dotfiles for macOS, managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-### Quick install
-For a quick install:
+## Structure
+
 ```
-curl -s https://raw.githubusercontent.com/bertvanpoecke/dotfiles/master/bootstrap | bash
+dotfiles/
+├── Brewfile          # All homebrew packages
+├── install.sh        # Setup script
+├── bin/              # Personal utilities (added to PATH)
+├── fish/             # Fish shell config (stow package)
+├── zsh/              # Zsh + Oh My Zsh config (stow package)
+├── starship/         # Starship prompt config (stow package)
+├── git/              # Git config (stow package)
+├── macos/            # macOS defaults
+├── vscode/           # VS Code settings
+├── docs/             # Reference docs
+└── local/            # Machine-specific overrides (gitignored)
 ```
 
-### Local settings
-When you like to use settings which are local to one workstation, you can optionally add
-* a **.local** file in the **system/** folder for Bash shell related settings.
-* a **local.fish** file in the **fish/** folder for Fish shell related settings.
+## Installation
 
-Add all your local aliases, functions and variables in these files.
-These files will not be pushed to the git repository, because they are in the .gitignore file.
+```bash
+git clone https://github.com/bertvanpoecke/dotfiles ~/projects/dotfiles
+cd ~/projects/dotfiles
+./install.sh
 ```
-#!/usr/bin/env bash        //Add this line only for Bash
 
-### LOCAL VARIABLES
-# Optionally add some variables which you want to keep local to this workingstation.
-# ...
-### LOCAL ALIASES
-# Optionally add some aliases which you want to keep local to this workingstation.
-# ...
-### LOCAL FUNCTIONS
-# Optionally add some functions which you want to keep local to this workingstation.
-# ...
+The install script will:
+1. Install Homebrew (if missing)
+2. Run `brew bundle` to install all packages
+3. Install Oh My Zsh
+4. Stow all packages to `$HOME`
+5. Set zsh as the default shell
+
+## How stow works
+
+Each top-level directory is a "package". Running `stow <package>` from the dotfiles directory creates symlinks in `$HOME` that mirror the package structure.
+
+Example: `fish/.config/fish/config.fish` → `~/.config/fish/config.fish`
+
+## Local overrides
+
+Machine-specific config that should never be committed goes in `local/` (gitignored).
+
+- **zsh**: create `local/zsh/zshrc.local` — see `local/zsh/zshrc.local.example`; `install.sh` symlinks it to `~/.zshrc.local`
+- **fish**: create `local/fish/local.fish` — see `local/fish/local.fish.example`
+- **git**: create `local/git/gitconfig.local` — see `local/git/gitconfig.local.example`; `install.sh` symlinks it to `~/.gitconfig.local`, which `git/.gitconfig` includes (holds your `user.name`/`user.email`)
+- **IDE**: set `IDE_CMD` to `cursor` or `code` (default: `code`); `c` opens paths in that editor
+- **scripts**: place in `local/bin/` and reference from shell config
+
+## Shells
+
+- **zsh** is the default login shell with [Oh My Zsh](https://ohmyz.sh/) and [Starship](https://starship.rs/)
+- **fish** is available as a secondary interactive shell, also using Starship
+
+## macOS defaults
+
+```bash
+bash macos/defaults.sh
 ```

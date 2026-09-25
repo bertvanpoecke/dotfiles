@@ -1,0 +1,13 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[directory]
+truncation_length = 5
+truncate_to_repo = false
+
+[kubernetes]
+disabled = true
+
+[shell]
+disabled = true
+fish_indicator = "fish"
+zsh_indicator = "zsh"

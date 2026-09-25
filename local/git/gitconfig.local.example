@@ -1,0 +1,7 @@
+# gitconfig.local — machine-specific overrides (gitignored)
+# Copy this file to local/git/gitconfig.local and customize it.
+# install.sh symlinks it to ~/.gitconfig.local, which git/.gitconfig includes.
+
+[user]
+	name = Your Name
+	email = you@example.com
