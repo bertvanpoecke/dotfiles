@@ -10,11 +10,13 @@ Every push, do all of the following — no exceptions, no "it's probably fine":
 
 - **Read every line of every changed/new file, in full.** Not `git diff --cached --stat`, not filenames, not a skim — the actual content. This applies to files that look boilerplate too (configs, scripts, markdown).
 - **Also check full history of new files**, not just the diff: `git log -p -- <file>` for anything newly tracked, in case earlier commits on a branch carry residue.
+- **Before any history scan, confirm the clone isn't shallow**: run `git rev-parse --is-shallow-repository`; if `true`, run `git fetch --unshallow` first. A shallow clone silently truncates `git log`/`git log -p` to recent commits with no warning — a "clean" scan on a shallow clone proves nothing about the rest of history.
 - **Treat these as hard blockers** — do not push if any are found, no matter how minor they look:
   - API keys, tokens, secrets, passwords, connection strings, private keys (`BEGIN ... PRIVATE KEY`, `ssh-rsa`, `ssh-ed25519`), auth headers.
   - Any employer/company name, internal product name, internal repo/service name, or internal codename.
   - Internal hostnames, internal URLs, internal IPs, Slack/Jira/Confluence channel or project IDs, ticket numbers.
   - Real person names, email addresses, usernames, or handles other than the user's own where clearly needed (e.g. commit author).
+  - The user's own past-employer or work-machine identities in commit author/committer metadata (`git log --all --format='%ae %ce'`) — not just file content. A personal repo's history can carry old work emails/hostnames from commits made on a work machine, separate from anything in the diffs.
   - File paths that embed employer info (e.g. `~/go/src/bitbucket.org/<employer>/...`) — genericize or remove.
   - Anything that reads like it was copy-pasted from a work conversation, ticket, or internal doc, even if scrubbed-looking.
 - **When a skill or doc needs an example**, it must use obviously fake placeholders (`myplugin:myskill`, `acme-corp`, `example.com`) — never a real internal name "cleaned up," since cleanup is easy to get wrong.
